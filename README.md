@@ -26,7 +26,7 @@
 
 ### Once Application will be started successfully
 
-    http://localhost:8080/graphiql 
+   http://localhost:8080/graphiql 
    to start executing queries / mutation. 
    
    For example:
