@@ -1,0 +1,17 @@
+type Song {
+    id: ID!
+    title: String!
+    duration: Int!
+    artist: Artist
+}
+
+extend type Query {
+    findAllSongs: [Song]!
+    countSongs: Long!
+}
+
+extend type Mutation {
+    createSong(title: String!, duration: Int!, artist: ID!) : Song!
+    updateSong(title: String!, duration: Int!, id: ID!) : Song!
+    deleteSong(id: ID!) : Boolean
+}

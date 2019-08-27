@@ -1,0 +1,14 @@
+type Artist {
+  id: ID!
+  name: String!
+  country: String!
+}
+
+type Query {
+  findAllArtists: [Artist]!
+  countArtists: Long!
+}
+
+type Mutation {
+  createArtist(name: String!, country: String!) : Artist!
+}
