@@ -6,7 +6,7 @@ import javax.persistence.*;
 @Table(name="song")
 public class Song{
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Integer id;
     private String title;
     private Integer duration;

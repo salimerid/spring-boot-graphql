@@ -17,6 +17,7 @@ public class Mutation implements GraphQLMutationResolver {
         this.artistRepository = artistRepository;
     }
 
+    //----------------- Artist CRUD ---------------------
     public Artist createArtist(String name, String country) {
         Artist artist = new Artist();
         artist.setName(name);
@@ -25,6 +26,7 @@ public class Mutation implements GraphQLMutationResolver {
         return artist;
     }
 
+    //------------------ Song CRUD --------------------
     public Song createSong(String title, Integer duration, Integer artistId) {
         Song song = new Song();
         song.setArtist(new Artist(artistId));
@@ -35,7 +37,7 @@ public class Mutation implements GraphQLMutationResolver {
     }
 
     public Song updateSong(String title, Integer duration, Integer id) {
-        Song song = songRepository.getOne(id);
+        Song song = songRepository.findById(id).get();
         song.setTitle(title);
         song.setDuration(duration);
         songRepository.save(song);
